@@ -1,0 +1,25 @@
+h1, h2, h3, h4, h5, h6, p, button {
+    margin: auto;
+}
+
+.header {
+    max-width: 958px;
+}
+
+.header-span {
+    color: #73A372;
+    text-decoration: underline;
+}
+
+.body-content {
+    margin-top: 220px;
+}
+
+.desc {
+    margin-top: 24px;
+    max-width: 1064px;
+}
+
+#button {
+    margin-top: 48px;
+}
