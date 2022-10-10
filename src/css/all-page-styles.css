@@ -38,15 +38,15 @@ p {
 .custom-button {
     width: 384px;
     height: 96px;
+
+    border-width: 4px;
     border-radius: 80px;
+    border-color: #B1D7B4;
 
     font-family: "Source-Sans-Pro", sans-serif;
     font-weight: 900;
-    background-image: linear-gradient(to right, #73A372, #B1D7B4);
+    /* background-image: linear-gradient(to right, #73A372, #B1D7B4); */
     font-size: 36px;
-    border: none;
-}
-
-.custom-button:hover {
-    background-image: linear-gradient(to right, #B1D7B4, #F7F6DC);
+    /* border: none; */
+    color: #73A372  ;
 }

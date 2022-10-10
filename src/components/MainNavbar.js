@@ -1,17 +1,20 @@
-import { Container, Navbar, Nav } from "react-bootstrap"
-import "../css/navbar-styles.css"
+import { Container, Navbar, Nav, NavbarBrand, NavLink } from "react-bootstrap";
+import "../css/navbar-styles.css";
 
 const MainNavbar = () => {
-    return (
-        <Navbar>
-            <Container>
-                <Navbar.Brand><h3 className="brand">ChefShack</h3></Navbar.Brand>
+  return (
+    <Navbar>
+      <Container>
+        <NavbarBrand>
+          <h3>ChefShack</h3>
+        </NavbarBrand>
 
-            </Container>
-
-            {/* <Nav.Link ms="auto">Login</Nav.Link> */}
-        </Navbar>
-    )
-}
+        <Nav className="ms-auto">
+          <NavLink><p>Login</p></NavLink>
+        </Nav>
+      </Container>
+    </Navbar>
+  );
+};
 
 export default MainNavbar;
