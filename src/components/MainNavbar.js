@@ -10,7 +10,8 @@ const MainNavbar = () => {
         </NavbarBrand>
 
         <Nav className="ms-auto">
-          <NavLink><p>Login</p></NavLink>
+          <NavLink href="recipes"><p>Recipes</p></NavLink>
+          <NavLink href="login"><p>Login</p></NavLink>
         </Nav>
       </Container>
     </Navbar>

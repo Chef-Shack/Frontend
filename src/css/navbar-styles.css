@@ -2,3 +2,8 @@
     border-bottom: 3px solid #D9D9D9;
     /* background-color: #73A372; */
 }
+
+.nav-link {
+    margin-right: 16px;
+    margin-left: 16px;
+}

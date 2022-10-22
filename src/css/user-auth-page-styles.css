@@ -1,0 +1,47 @@
+.user-auth-body-content {
+    height: 100vh;
+    background-image: linear-gradient(to right, #73A372, #B1D7B4) !important;
+}
+
+h1 {
+    font-size: 54.2px;
+    margin-top: 64px;
+
+    margin-bottom: 100px;
+}
+
+input {
+    font-size: 24px;
+
+    background: transparent;
+
+    width: 290px;
+    margin-bottom: 32px;
+
+    border: none;
+    border-bottom: 1px solid;
+}
+
+input:focus{
+    outline: none;
+}
+
+.form-container {
+    height: 683px;
+    width: 579px;
+
+    background-color: #F7F6DC;
+
+    box-shadow: 0 10px 38px 5.65px rgba(0, 0, 0, 25%);
+
+    text-align: center;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.invisible {
+    display: none;
+}
