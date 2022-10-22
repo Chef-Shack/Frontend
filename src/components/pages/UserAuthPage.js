@@ -22,11 +22,11 @@ const UserAuthPage = (props) => {
     }
 
     function clearField(fieldValue, fieldFunction) {
-        //TODO: Make it so users cannot create an account with fields with "Username", "Email", "Password", and "ConfirmPassword"
+        //TODO: Make it so users cannot create an account with fields with "Username", "Email", "Password", and "Confirm Password"
 
         let isDefaultField = false;
 
-        for(const fieldName of ["Username", "Email", "Password", "ConfirmPassword"]) {
+        for(const fieldName of ["Username", "Email", "Password", "Confirm Password"]) {
             if(fieldValue === fieldName) {
                 isDefaultField = true;
                 console.log(isDefaultField)
@@ -47,9 +47,9 @@ const UserAuthPage = (props) => {
                     <form className="user-auth-form">
                         <h1>{headerText}</h1>
                         <input type="text" name="Username" value={username} onChange={({ target }) => setUsername(target.value)} onFocus={() => clearField(username, setUsername)}></input>
-                        <input className={emailAndConfirmVisibilityClass} type="email" name="Email" value={email} onChange={({ target }) => setEmail(target.value)} onFocus={() => clearField(email, setEmail())}></input>
-                        <input type="text" name="Password" value={password} onChange={({ target }) => setPassword(target.value)} onFocus={() => clearField(password, setPassword())}></input>
-                        <input className={emailAndConfirmVisibilityClass} type="text" name="ConfirmPassword" value={confirmPassword} onChange={({ target }) => setConfirmPassword(target.value)} onFocus={() => clearField(confirmPassword, setConfirmPassword())}></input>
+                        <input className={emailAndConfirmVisibilityClass} type="email" name="Email" value={email} onChange={({ target }) => setEmail(target.value)} onFocus={() => clearField(email, setEmail)}></input>
+                        <input type="text" name="Password" value={password} onChange={({ target }) => setPassword(target.value)} onFocus={() => clearField(password, setPassword)}></input>
+                        <input className={emailAndConfirmVisibilityClass} type="text" name="ConfirmPassword" value={confirmPassword} onChange={({ target }) => setConfirmPassword(target.value)} onFocus={() => clearField(confirmPassword, setConfirmPassword)}></input>
 
                         <Button type="submit" href="recipes" className="custom-button" id="button" variant="outline-success">{buttonText}</Button>
                     </form>
