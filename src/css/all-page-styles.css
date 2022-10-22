@@ -33,11 +33,15 @@ h6 {
 p {
     font-family: "Open Sans", sans-serif;
     font-size: 32px;
+    color: #0C0F0C;
+    opacity: 80%;
 }
 
 .custom-button {
     width: 384px;
     height: 96px;
+
+    padding-top: 16px; /* This is for vertical alginment */
 
     border-width: 4px;
     border-radius: 80px;
