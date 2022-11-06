@@ -50,7 +50,8 @@ const UserAuthPage = (props) => {
             axios.post('http://127.0.0.1:8000/members/login_user', bodyFormData).then(res => {
                 if(res.data.success === true) {
                     // login user
-                    console.log("log in")
+                    window.localStorage.setItem('username', res.data.user)
+                    window.localStorage.setItem('authenticated', true)
                 }
 
             }).catch((err) => {

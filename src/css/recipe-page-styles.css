@@ -1,0 +1,26 @@
+.recipe-page-header {
+    margin: 0;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.recipe-page-subheader {
+    font-size: 32px;
+    text-align: center;
+
+    margin-bottom: 64px;
+}
+
+.recipe-page-subheader-span {
+    color: #73A372;
+    text-decoration: underline;
+}
+
+.recipe-tiles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 16px;  
+}
