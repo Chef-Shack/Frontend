@@ -7,7 +7,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./css/all-page-styles.css";
 import UserAuthPage from "./components/pages/UserAuthPage";
 
+import { useEffect } from "react";
+
 const App = () => {
+  useEffect(() => {
+    window.localStorage.setItem('username', '')
+    window.localStorage.setItem('authenticated', false)
+  }, [])
+
   return (
     <Router>
       <Routes>
