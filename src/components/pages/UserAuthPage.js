@@ -52,6 +52,9 @@ const UserAuthPage = (props) => {
                     // login user
                     window.localStorage.setItem('username', res.data.user)
                     window.localStorage.setItem('authenticated', true)
+
+                    console.log(window.localStorage.getItem('username'))
+                    
                 }
 
             }).catch((err) => {

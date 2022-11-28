@@ -1,0 +1,41 @@
+.recipe-page-content {
+    margin-left: 300px;
+}
+
+.recipe-page-title {
+    margin-bottom: 10px;
+}
+
+.recipe-page-like-section {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.recipe-page-like-button {
+    border: 0;
+    background: transparent;
+}
+
+.recipe-page-like-image {
+    position: relative;
+    bottom: 7px;
+}
+
+.recipe-page-like-text {
+    display: inline;
+    font-size: 24px;
+}
+
+.recipe-page-image {
+    margin-top: 32px;
+    margin-bottom: 64px;
+}
+
+.recipe-page-desc-container {
+    width: 900px;
+}
+
+.recipe-page-section {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
