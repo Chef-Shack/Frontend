@@ -8,10 +8,11 @@ import "./css/all-page-styles.css";
 import UserAuthPage from "./components/pages/UserAuthPage";
 
 import { useEffect } from "react";
+import RecipePage from "./components/pages/RecipePage";
 
 const App = () => {
   useEffect(() => {
-    window.localStorage.setItem('username', '')
+    // window.localStorage.setItem('username', '')
     window.localStorage.setItem('authenticated', false)
   }, [])
 
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='/login' element={<UserAuthPage type="login"/>}/>
         <Route path='/signup' element={<UserAuthPage type="signup"/>}/>
         <Route path='/recipes' element={<RecipesPage/>}/>
+        <Route path='/recipes/:id' element={<RecipePage/>}/>
       </Routes>
     </Router>
   );
