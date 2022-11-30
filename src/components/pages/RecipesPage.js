@@ -30,7 +30,7 @@ const RecipesPage = () => {
             <p className="recipe-page-subheader">or search by <span className="recipe-page-subheader-span">cuisine</span></p>
             
             <div className="recipe-tiles">
-                {recipes.map(recipe => <RecipeTile title={recipe.recipe_title} author={recipe.author} image={recipe.image} id={recipe.id}/>)}
+                {recipes.map(recipe => <RecipeTile title={recipe.recipe_title} author={recipe.author} image={recipe.image} id={recipe.id} likes={recipe.likes}/>)}
             </div>
                 
         </>

@@ -11,6 +11,17 @@
     margin-top: 16px;
 }
 
+.recipe-tile-likes {
+    font-size: 20px;
+    display: inline;
+}
+
+.recipe-tile-like-image {
+    position: relative;
+    left: 5px;
+    bottom: 5px;
+}
+
 .recipe-tile-author {
     font-size: 16px;
 }

@@ -52,7 +52,11 @@ const RecipePage = () => {
       if (window.localStorage.getItem("authenticated")) {
         setStarImage(true);
 
-        console.log(`Username on recipe page is: ${window.localStorage.getItem('username')}`)
+        console.log(
+          `Username on recipe page is: ${window.localStorage.getItem(
+            "username"
+          )}`
+        );
 
         const bodyFormData = new FormData();
         //TODO: make a check to see if the user is logged in
@@ -96,7 +100,7 @@ const RecipePage = () => {
     function getRecipe() {
       const bodyFormData = new FormData();
       bodyFormData.append("id", id);
-  
+
       axios
         .post("http://localhost:8000/recipes/get_recipe", bodyFormData)
         .then((res) => {
@@ -113,7 +117,26 @@ const RecipePage = () => {
         });
     }
 
+    function checkIfRecipeIsLiked() {
+      if (!window.localStorage.getItem("authenticated")) {
+        return;
+      }
+
+      const username = window.localStorage.getItem("username");
+
+      axios.get(`http://localhost:8000/members/get_user_by_name/${username}`).then((res) => {
+        for (const recipeId of res.data.likedRecipes) {
+          if(recipeId == id) {
+            // fill in the like button if the recipe is already liked
+            setStarImage(true)
+            console.log("recipe id matches")
+          }
+        }
+      })
+    }
+
     getRecipe();
+    checkIfRecipeIsLiked()
   }, []);
 
   return (
