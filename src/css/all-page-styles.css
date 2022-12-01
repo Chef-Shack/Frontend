@@ -58,3 +58,8 @@ li {
     /* border: none; */
     color: #73A372  ;
 }
+
+#spinner {
+    margin-left: 50%;
+    margin-top: 10%;
+}
