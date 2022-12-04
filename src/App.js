@@ -9,6 +9,7 @@ import UserAuthPage from "./components/pages/UserAuthPage";
 
 import { useEffect } from "react";
 import RecipePage from "./components/pages/RecipePage";
+import CreateRecipePage from "./components/pages/CreateRecipePage";
 
 const App = () => {
   useEffect(() => {
@@ -24,6 +25,7 @@ const App = () => {
         <Route path='/signup' element={<UserAuthPage type="signup"/>}/>
         <Route path='/recipes' element={<RecipesPage/>}/>
         <Route path='/recipes/:id' element={<RecipePage/>}/>
+        <Route path='/create-recipe' element={<CreateRecipePage/>}/>
       </Routes>
     </Router>
   );

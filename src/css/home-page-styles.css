@@ -12,14 +12,19 @@ h1, h2, h3, h4, h5, h6, p, button {
 }
 
 .body-content {
-    margin-top: 220px;
+    margin-top: 200px;
 }
 
 .desc {
-    margin-top: 24px;
     max-width: 1064px;
+
+    position: relative;
+    bottom: 50px;
 }
 
 #button {
     margin-top: 48px;
+
+    position: relative;
+    bottom: 50px;
 }
