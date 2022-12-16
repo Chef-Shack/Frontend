@@ -75,7 +75,7 @@ const CreateRecipePage = (props) => {
               </Button>
 
               <Button
-                className="custom-button create-recipe-form-button"
+                className="custom-button create-recipe-form-button create-recipe-right-most-button"
                 id="button"
                 variant="outline-success"
               >
@@ -88,7 +88,7 @@ const CreateRecipePage = (props) => {
                 id="button"
                 variant="outline-success"
               >
-                <span className="create-recipe-submit-button-text">Create Recipe</span>
+                <span className="create-recipe-submit-button-text">Create</span>
               </Button>
             </form>
           </div>

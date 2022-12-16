@@ -4,8 +4,8 @@
 }
 
 .create-recipe-form-container {
-    height: 751px;
-    width: 1252px;
+    height: 90%;
+    width: 90%;
 
     background-color: #F7F6DC;
 
@@ -21,30 +21,38 @@
     border-radius: 40px;
 }
 
-#create-recipe-header {
-    font-size: 54.2px;
-    margin-top: 64px;
+.create-recipe-form {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
 
-    margin-bottom: 50px;
+#create-recipe-header {
+    font-size: 35px;
+    /* margin-top: 64px; */
+
+    /* margin-bottom: 50px; */
+
+    margin: 3% 0 3% 0;
 
     text-align: left;
-    margin-left: 10%;
+    /* margin-left: 10%; */
 }
 
 .create-recipe-input {
-    font-size: 24px;
+    font-size: 20px;
 
     background: transparent;
 
-    width: 290px;
-    margin-bottom: 32px;
+    width: 60%;
+    /* margin-bottom: 32px; */
 
     border: none;
     border-bottom: 1px solid;
 
     display: block;
-    
-    margin-left: 10%;
 }
 
 .create-recipe-input:focus{
@@ -55,22 +63,22 @@ textarea {
     resize: none;
     display: block;
 
-    margin-left: 10%;
+    width: 80%;
+    height: 150px;
 
-    width: 800px;
-    height: 200px;
-
-    font-size: 24px;
+    font-size: 20px;
 
     background: transparent;
     border: 1px solid;
 
     margin-top: 50px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 
     padding: 10px;
 
     border-radius: 20px;
+
+    margin-bottom: 3%;
 }
 
 .invisible {
@@ -78,36 +86,43 @@ textarea {
 }
 
 .create-recipe-form-button {
-    width: 200px;
-    height: 65px;
+    margin: 0 0 0 1% !important;
+
+    width: 45%;
+    height: 50px;
 
     font-size: 20px;
 
-    margin-left: 16px;
-
     position: relative;
-    right: 150px;
+    right: 10%;
+    bottom: 0 !important;
 }
 
 .create-recipe-form-button-text {
     position: relative;
-    bottom: 5px;
+    bottom: 10px;
 }
 
 .create-recipe-submit-button {
-    width: 300px;
-    height: 75px;
+    font-size: 20px;
+
+    margin: 0 !important;
+
+    width: 40%;
+    height: 50px;
+
+    top: 20px !important;
+    right: 40px;
+    bottom: 0 !important;
+
 
     background-image: linear-gradient(to right, #73A372, #B1D7B4);
     border: none;
     color: white;
-
-    position: relative;
-    left: 200px;
 }
 
 .create-recipe-submit-button-text {
     position: relative;
     
-    bottom: 4px;
+    bottom: 8px;
 }
