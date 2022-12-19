@@ -8,7 +8,7 @@ const CreateRecipePage = (props) => {
   const [image, setImage] = useState("Image URL (Must be Square)");
   const [description, setDescription] = useState("Description");
   const [ingredients, setIngredients] = useState([]);
-  const [procedure, setProcedure] = useState([]);
+  const [instructions, setInstructions] = useState([]);
 
   function clearField(fieldValue, fieldFunction) {
     //TODO: Make it so users cannot create an account with fields with "Username", "Email", "Password", and "Confirm Password"
@@ -32,6 +32,27 @@ const CreateRecipePage = (props) => {
 
   async function handleSubmit(event) {
     event.preventDefault();
+
+    const confirm = window.confirm(`Are you sure you want to submit this recipe? (Scroll to view complete summary)\n
+    Title: ${title}\n
+    Description: ${description}\n
+    Ingredients: ${ingredients}\n
+    Instructions: ${instructions}`);
+
+    // if(confirm) {
+    //   const bodyFormData = new FormData()
+    //   bodyFormData.append("title", title);
+    // }
+  }
+
+  function addIngredientOrInstruction(type) {
+    const ingredientOrInstruction = prompt(`Enter an ${type}`)
+
+    if(type === "Ingredient") {
+      setIngredients(ingredients.concat([ingredientOrInstruction]))
+    } else if(type === "Instructions") {
+      setInstructions(instructions.concat([ingredientOrInstruction]))
+    }
   }
 
   if (window.localStorage.getItem("authenticated")) {
@@ -70,14 +91,16 @@ const CreateRecipePage = (props) => {
                 className="custom-button create-recipe-form-button"
                 id="button"
                 variant="outline-success"
+                onClick={() => {addIngredientOrInstruction("Ingredient")}}
               >
-                <span className="create-recipe-form-button-text">Add Ingredients</span>
+                <span className="create-recipe-form-button-text">Add Ingredient</span>
               </Button>
 
               <Button
                 className="custom-button create-recipe-form-button create-recipe-right-most-button"
                 id="button"
                 variant="outline-success"
+                onClick={() => {addIngredientOrInstruction("Instructions")}}
               >
                 <span className="create-recipe-form-button-text">Add Instructions</span>
               </Button>
