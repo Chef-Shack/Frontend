@@ -1,0 +1,44 @@
+.categories-page-header {
+    text-align: center;
+}
+
+.categories-page-header-span {
+    color: #73A372;
+    text-decoration: underline;
+}
+
+.categories {
+    margin: 128px;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 64px;  
+}
+
+.category {
+    display: inline-block;
+}
+
+.category-image {
+    height: 256px;
+    width: 256px;
+
+    border-radius: 100%;
+
+    display: block;
+    margin: auto;
+}
+
+.category-name {
+    text-align: center;
+    position: relative;
+    top: 24px;
+
+    
+}
+
+.category a {
+    text-decoration-color:#73A372;
+}

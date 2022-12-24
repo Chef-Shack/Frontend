@@ -9,6 +9,7 @@ const CreateRecipePage = (props) => {
   const [description, setDescription] = useState("Description");
   const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState([]);
+  const [category, setCategory] = useState("Category/Cuisine");
 
   function clearField(fieldValue, fieldFunction) {
     //TODO: Make it so users cannot create an account with fields with "Username", "Email", "Password", and "Confirm Password"
@@ -17,6 +18,7 @@ const CreateRecipePage = (props) => {
 
     for (const fieldName of [
       "Title",
+      "Category/Cuisine",
       "Image URL (Must be Square)",
       "Description",
     ]) {
@@ -35,14 +37,41 @@ const CreateRecipePage = (props) => {
 
     const confirm = window.confirm(`Are you sure you want to submit this recipe? (Scroll to view complete summary)\n
     Title: ${title}\n
+    Category: ${category}\n
     Description: ${description}\n
     Ingredients: ${ingredients}\n
     Instructions: ${instructions}`);
 
-    // if(confirm) {
-    //   const bodyFormData = new FormData()
-    //   bodyFormData.append("title", title);
-    // }
+    if(confirm) {
+      let id
+
+      await axios.get(`http://localhost:8000/members/get_user_by_name/${window.localStorage.getItem('username')}`).then((res) => {
+        id = res.data.id
+      }).catch((err) => {
+        console.log(err)
+      })
+
+      if(id != null) {
+        const bodyFormData = new FormData()
+        bodyFormData.append("recipe_title", title);
+        bodyFormData.append("recipe_description", description);
+        bodyFormData.append("author", id);
+        bodyFormData.append("image", image);
+        bodyFormData.append("ingredients", ingredients);
+        bodyFormData.append("procedure", instructions);
+        // TODO: Create a part in the form for categories
+        bodyFormData.append("category", category);
+
+        axios.post("http://localhost:8000/recipes/create_recipe", bodyFormData).then((res) => {
+          console.log("created recipe!")
+        }).catch((err) => {
+          console.log(err)
+        })
+      } else {
+        console.log("it's null")
+      }
+
+    }
   }
 
   function addIngredientOrInstruction(type) {
@@ -69,6 +98,15 @@ const CreateRecipePage = (props) => {
                 value={title}
                 onChange={({ target }) => setTitle(target.value)}
                 onFocus={() => clearField(title, setTitle)}
+              ></input>
+
+              <input
+                className="create-recipe-input"
+                type="text"
+                name="Category"
+                value={category}
+                onChange={({ target }) => setCategory(target.value)}
+                onFocus={() => clearField(category, setCategory)}
               ></input>
 
             <input

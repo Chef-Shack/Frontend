@@ -75,7 +75,6 @@ const RecipePage = () => {
             console.log(err);
           });
       }
-
     } else {
       if (window.localStorage.getItem("authenticated")) {
         setStarImage(false);
@@ -106,7 +105,7 @@ const RecipePage = () => {
         .post("http://localhost:8000/recipes/get_recipe", bodyFormData)
         .then((res) => {
           setTitle(res.data.recipe_title);
-          setAuthor(res.data.author);
+          setAuthor(res.data.username);
           setImage(res.data.image);
           setPubDate(res.data.pub_date);
           setDescription(res.data.recipe_description);
@@ -135,7 +134,8 @@ const RecipePage = () => {
               console.log("recipe id matches");
             }
           }
-        }).finally(() => {
+        })
+        .finally(() => {
           // since all axios calls are done at this point, set isLoading to false
           setIsLoading(false);
         });
@@ -207,9 +207,7 @@ const RecipePage = () => {
       </>
     );
   } else {
-    return (
-      <Spinner id="spinner" animation="border" variant="success" />
-    )
+    return <Spinner id="spinner" animation="border" variant="success" />;
   }
 };
 
