@@ -17,6 +17,10 @@
     text-decoration: underline;
 }
 
+.recipe-page-subheader-span:hover {
+    color: #517451;
+}
+
 .recipe-tiles {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

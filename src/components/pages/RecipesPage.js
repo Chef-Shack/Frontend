@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import "../../css/recipe-page-styles.css";
+import { Link } from "react-router-dom";
 
 const RecipesPage = () => {
   const [recipes, setRecipes] = useState([]);
@@ -37,15 +38,15 @@ const RecipesPage = () => {
         <h1 className="recipe-page-header">Explore Recipes</h1>
         {/*Todo: make the span a link*/}
         <p className="recipe-page-subheader">
-          or search by{" "}
-          <span className="recipe-page-subheader-span">cuisine</span>
+          or browse by{" "}
+          <Link to="/categories" className="recipe-page-subheader-span">category</Link>
         </p>
 
         <div className="recipe-tiles">
           {recipes.map((recipe) => (
             <RecipeTile
               title={recipe.recipe_title}
-              author={recipe.author}
+              author={recipe.username}
               image={recipe.image}
               id={recipe.id}
               likes={recipe.likes}

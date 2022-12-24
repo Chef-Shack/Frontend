@@ -9,6 +9,9 @@ import UserAuthPage from "./components/pages/UserAuthPage";
 
 import { useEffect } from "react";
 import RecipePage from "./components/pages/RecipePage";
+import CreateRecipePage from "./components/pages/CreateRecipePage";
+import CategoriesPage from "./components/pages/CategoriesPage";
+import CategoryPage from "./components/pages/CategoryPage";
 
 const App = () => {
   useEffect(() => {
@@ -24,6 +27,9 @@ const App = () => {
         <Route path='/signup' element={<UserAuthPage type="signup"/>}/>
         <Route path='/recipes' element={<RecipesPage/>}/>
         <Route path='/recipes/:id' element={<RecipePage/>}/>
+        <Route path='/create-recipe' element={<CreateRecipePage/>}/>
+        <Route path='/categories' element={<CategoriesPage/>}/>
+        <Route path='/categories/:id' element={<CategoryPage/>}/>
       </Routes>
     </Router>
   );
