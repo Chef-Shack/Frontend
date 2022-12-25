@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import "../../css/create-recipe-page-styles.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CreateRecipePage = (props) => {
   const [title, setTitle] = useState("Title");
@@ -10,6 +11,8 @@ const CreateRecipePage = (props) => {
   const [ingredients, setIngredients] = useState([]);
   const [instructions, setInstructions] = useState([]);
   const [category, setCategory] = useState("Category/Cuisine");
+
+  let navigate = useNavigate()
 
   function clearField(fieldValue, fieldFunction) {
     //TODO: Make it so users cannot create an account with fields with "Username", "Email", "Password", and "Confirm Password"
@@ -64,6 +67,7 @@ const CreateRecipePage = (props) => {
 
         axios.post("http://localhost:8000/recipes/create_recipe", bodyFormData).then((res) => {
           console.log("created recipe!")
+          navigate("/recipes")
         }).catch((err) => {
           console.log(err)
         })
