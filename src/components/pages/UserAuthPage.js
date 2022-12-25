@@ -2,8 +2,11 @@ import { useState } from "react";
 import { Button } from "react-bootstrap";
 import "../../css/user-auth-page-styles.css";
 import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 const UserAuthPage = (props) => {
+  let navigate = useNavigate()
+
   const [username, setUsername] = useState("Username");
   const [email, setEmail] = useState("Email");
   const [password, setPassword] = useState("Password");
@@ -60,7 +63,8 @@ const UserAuthPage = (props) => {
             window.localStorage.setItem("username", res.data.user);
             window.localStorage.setItem("authenticated", true);
 
-            console.log(window.localStorage.getItem("username"));
+            // success! redirect the user
+            navigate("/recipes")
           }
         })
         .catch((err) => {
@@ -76,7 +80,8 @@ const UserAuthPage = (props) => {
       await axios
         .post("http://localhost:8000/members/register_user", bodyFormData)
         .then((result) => {
-          console.log("success creating user");
+          // success! redirect the user
+          navigate("/recipes")
         })
         .catch((err) => {
           console.log(err);
@@ -96,6 +101,7 @@ const UserAuthPage = (props) => {
               value={username}
               onChange={({ target }) => setUsername(target.value)}
               onFocus={() => clearField(username, setUsername)}
+              required
             ></input>
             <input
               className={emailAndConfirmVisibilityClass}
@@ -104,6 +110,7 @@ const UserAuthPage = (props) => {
               value={email}
               onChange={({ target }) => setEmail(target.value)}
               onFocus={() => clearField(email, setEmail)}
+              required
             ></input>
             <input
               type="text"
@@ -111,6 +118,7 @@ const UserAuthPage = (props) => {
               value={password}
               onChange={({ target }) => setPassword(target.value)}
               onFocus={() => clearField(password, setPassword)}
+              required
             ></input>
             <input
               className={emailAndConfirmVisibilityClass}
@@ -119,7 +127,11 @@ const UserAuthPage = (props) => {
               value={confirmPassword}
               onChange={({ target }) => setConfirmPassword(target.value)}
               onFocus={() => clearField(confirmPassword, setConfirmPassword)}
+              required
             ></input>
+
+            {props.type == 'login' && <p className="alternative-auth-message">or <Link to="/signup" className="alternative-auth-link">create an account</Link> </p>}
+            {props.type == 'signup' && <p className="alternative-auth-message">or <Link to="/login" className="alternative-auth-link">login</Link> </p>}
 
             <Button
               type="submit"

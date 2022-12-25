@@ -12,7 +12,7 @@ const MainNavbar = () => {
         <Nav className="ms-auto">
           <NavLink href="/recipes"><p>Recipes</p></NavLink>
           <NavLink href="/login"><p>Login</p></NavLink>
-          {/* <NavLink href="/create-recipe"><p>Create Recipe</p></NavLink> */}
+          {window.localStorage.getItem('authenticated') && <NavLink href="/create-recipe"><p>Create</p></NavLink>}
         </Nav>
       </Container>
     </Navbar>

@@ -47,3 +47,11 @@ input:focus{
 .invisible {
     display: none;
 }
+
+.alternative-auth-message {
+    font-size: 24px;
+}
+
+.alternative-auth-link {
+    color: #73A372;
+}
