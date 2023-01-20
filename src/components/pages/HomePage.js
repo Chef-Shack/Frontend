@@ -9,7 +9,7 @@ const HomePage = () => {
 
       <div className="body-content text-center">
         <button onClick={() => {
-  fetch('http://example.com/movies.json')
+  fetch('http://159.65.224.118:8080/recipes/get_all_recipes')
   .then((response) => response.json())
   .then((data) => console.log(data));
   }}>Test</button>
