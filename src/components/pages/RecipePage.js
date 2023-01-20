@@ -70,7 +70,7 @@ const RecipePage = () => {
         bodyFormData.append("recipeID", id);
 
         axios
-          .post("http://localhost:8000/members/like_recipe", bodyFormData)
+          .post("http://159.65.224.118:8080/members/like_recipe", bodyFormData)
           .catch((err) => {
             console.log(err);
           });
@@ -88,7 +88,7 @@ const RecipePage = () => {
         bodyFormData.append("recipeID", id);
 
         axios
-          .post("http://localhost:8000/members/unlike_recipe", bodyFormData)
+          .post("http://159.65.224.118:8080/members/unlike_recipe", bodyFormData)
           .catch((err) => {
             console.log(err);
           });
@@ -102,7 +102,7 @@ const RecipePage = () => {
       bodyFormData.append("id", id);
 
       axios
-        .post("http://localhost:8000/recipes/get_recipe", bodyFormData)
+        .post("http://159.65.224.118:8080/recipes/get_recipe", bodyFormData)
         .then((res) => {
           setTitle(res.data.recipe_title);
           setAuthor(res.data.username);
@@ -125,7 +125,7 @@ const RecipePage = () => {
       const username = window.localStorage.getItem("username");
 
       axios
-        .get(`http://localhost:8000/members/get_user_by_name/${username}`)
+        .get(`http://159.65.224.118:8080/members/get_user_by_name/${username}`)
         .then((res) => {
           for (const recipeId of res.data.likedRecipes) {
             if (recipeId == id) {

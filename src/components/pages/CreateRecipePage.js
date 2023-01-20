@@ -48,7 +48,7 @@ const CreateRecipePage = (props) => {
     if(confirm) {
       let id
 
-      await axios.get(`http://localhost:8000/members/get_user_by_name/${window.localStorage.getItem('username')}`).then((res) => {
+      await axios.get(`http://159.65.224.118:8080/members/get_user_by_name/${window.localStorage.getItem('username')}`).then((res) => {
         id = res.data.id
       }).catch((err) => {
         console.log(err)
@@ -65,7 +65,7 @@ const CreateRecipePage = (props) => {
         // TODO: Create a part in the form for categories
         bodyFormData.append("category", category);
 
-        axios.post("http://localhost:8000/recipes/create_recipe", bodyFormData).then((res) => {
+        axios.post("http://159.65.224.118:8080/recipes/create_recipe", bodyFormData).then((res) => {
           console.log("created recipe!")
           navigate("/recipes")
         }).catch((err) => {

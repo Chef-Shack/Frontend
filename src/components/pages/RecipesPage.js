@@ -14,7 +14,7 @@ const RecipesPage = () => {
 
   async function fillRecipeList() {
     await axios
-      .get("http://localhost:8000/recipes/get_all_recipes")
+      .get("http://159.65.224.118:8080/recipes/get_all_recipes")
       .then((res) => {
         setRecipes(res.data.recipes);
       })
