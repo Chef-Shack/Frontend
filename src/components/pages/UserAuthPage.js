@@ -113,7 +113,7 @@ const UserAuthPage = (props) => {
               required
             ></input>
             <input
-              type="text"
+              type="password"
               name="Password"
               value={password}
               onChange={({ target }) => setPassword(target.value)}
@@ -122,7 +122,7 @@ const UserAuthPage = (props) => {
             ></input>
             <input
               className={emailAndConfirmVisibilityClass}
-              type="text"
+              type="password"
               name="ConfirmPassword"
               value={confirmPassword}
               onChange={({ target }) => setConfirmPassword(target.value)}
