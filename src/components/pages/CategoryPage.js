@@ -20,7 +20,7 @@ const CategoryPage = () => {
 
   async function fillRecipeList() {
     await axios
-      .get("http://159.65.224.118:8080/recipes/get_all_recipes")
+      .get("https://chefshack-backend.herokuapp.com/recipes/get_all_recipes")
       .then((res) => {
         const tempRecipeList = []
 
