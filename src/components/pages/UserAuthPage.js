@@ -56,7 +56,7 @@ const UserAuthPage = (props) => {
       bodyFormData.append("password", password);
 
       axios
-        .post("http://159.65.224.118:8080/members/login_user", bodyFormData)
+        .post("https://chefshack-backend.herokuapp.com/members/login_user", bodyFormData)
         .then((res) => {
           if (res.data.success === true) {
             // login user
@@ -78,7 +78,7 @@ const UserAuthPage = (props) => {
       bodyFormData.append("email", email);
 
       await axios
-        .post("http://159.65.224.118:8080/members/register_user", bodyFormData)
+        .post("https://chefshack-backend.herokuapp.com/members/register_user", bodyFormData)
         .then((result) => {
           // success! redirect the user
           navigate("/recipes")
